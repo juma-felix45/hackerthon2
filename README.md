@@ -5,6 +5,7 @@ About the Project
 Emotion Sense is a full-stack, secure, and responsive web application designed to help users track their emotional well-being. It leverages powerful AI models to analyze the emotional content of a user's journal entries and uploaded images. The application stores this data and provides a visual representation of mood trends over time using interactive charts.  A core feature is the automatic AI-generated response, which offers supportive and actionable advice tailored to the detected emotion.
 
 You can view a live demo of the application here: https://mgx-mmzvftpvzwc.mgx.world/
+https://mgx-mmzvftpvzwc.mgx.world/
 You can view a pitch deck: https://gamma.app/docs/Emotion-Sense-Unlocking-Emotional-Well-being-with-AI-hytjo30pq6s30eu
 
 Features
@@ -65,3 +66,4 @@ Automated AI Responses: A key feature where the backend, upon analyzing emotion,
 Database Schema: A structured MySQL database with tables for users, journal_entries, and comments to store all necessary data.
 
 Security Measures: Ensures a secure application by implementing input sanitization, rate limiting, and robust JWT token verification.
+
