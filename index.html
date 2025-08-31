@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Sense</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>Emotion Sense</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#register">Register</a>
+  <a href="#journal">Journal</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<dev class="search">
+    <input class="search" type="search" placeholder="Search..." />
+    <a href="#"> <button class="btn">  </button></a>
+</dev>
+
+<main>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Emotion Sense analyzes your emotions via text or images. You can journal your feelings or capture a picture, 
+      and the system will provide emotion analysis and recommendations, including mental health support options.
+    </p>
+    <p>
+      Please register to use the journal features. Your privacy is our priority; all data is securely stored and 
+      used solely for emotion analysis. We do not share your information with third parties unless you have allowed.</p>
+  </section>
+
+  <!-- Login Section -->
+<section id="login">
+  <h2>User Login</h2>
+  <form id="loginForm" class="grid-form">
+    <div class="form-group">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" name="loginEmail" required />
+    </div>
+    <div class="form-group">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" name="loginPassword" required />
+    </div>
+    <button type="submit" class="full-width-btn">Login</button>
+    <p id="loginStatus" style="color:red; margin-top:0.5rem;"></p>
+  </form>
+</section>
+
+
+  <!-- Registration Section -->
+  <section id="register">
+    <h2>User Registration (Mandatory)</h2>
+    <form id="registerForm" class="grid-form">
+      <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required /></div>
+      <div class="form-group"><label for="age">Age</label><input type="number" id="age" name="age" required /></div>
+      <div class="form-group"><label for="location">Location</label><input type="text" id="location" name="location" required /></div>
+      <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required /></div>
+      <div class="form-group"><label for="idNumber">ID Number</label><input type="text" id="idNumber" name="idNumber" required /></div>
+      <div class="form-group"><label for="maritalStatus">Marital Status</label>
+        <select id="maritalStatus" name="maritalStatus" required>
+          <option value="">Select</option>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+          <option>Widowed</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required /></div>
+      <button type="submit" class="full-width-btn">Register</button>
+    </form>
+  </section>
+
+  <!-- Journal Section -->
+  <section id="journal">
+    <h2>Write Your Journal / Capture Image</h2>
+    <p><strong>Note:</strong> You must register before submitting your journal.</p>
+    <form id="journalForm" class="grid-form" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="userEmail">Registered Email</label>
+        <input type="email" id="userEmail" name="userEmail" placeholder="Enter your registered email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sectionDropdown">Select Section / Mood Category</label>
+        <select id="sectionDropdown" name="section" required>
+          <option value="">Select Category</option>
+          <option>Daily Reflection</option>
+          <option>Stress / Anxiety</option>
+            <option>Sadness / Depression</option>
+            <option>Anger / Frustration</option>
+          <option>Happiness / Joy</option>
+          <option>Relationships</option>
+
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="entry">How are you feeling today?</label>
+        <textarea id="entry" name="entry" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="uploadImage">Upload an Image (optional)</label>
+        <input type="file" id="uploadImage" name="image" accept="image/*" />
+      </div>
+
+      <div class="form-group full-width">
+        <label>Capture from Camera (optional)</label>
+        <video id="camera" autoplay playsinline></video>
+        <button type="button" id="captureBtn">Capture Photo</button>
+        <canvas id="capturedCanvas" style="display:none;"></canvas>
+      </div>
+
+      <button type="submit" class="full-width-btn">Analyze Emotion</button>
+    </form>
+
+    <div class="results" id="results" style="display:none;">
+      <h3>Analysis Result</h3>
+      <p id="emotionOutput"></p>
+      <canvas id="emotionChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@emotionsense.com</p>
+    <p>Phone: +123 456 7890</p>
+    <form id="commentForm">
+      <div class="form-group"><label for="comment">Leave a Comment</label><textarea id="comment" name="comment" rows="4" required></textarea></div>
+      <button type="submit" class="full-width-btn">Submit Comment</button>
+    </form>
+  </section>
+</main>
+
+<footer>&copy; 2025 Emotion Sense. All Rights Reserved.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

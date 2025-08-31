@@ -1,0 +1,209 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffe066; /* Yellow background */
+  color: #333;
+}
+
+header {
+  background: #ff4d4d; /* Red header */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+nav {
+  background: #4dff4d; /* Green nav */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.7rem 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #0000ff; /* Blue on hover */
+}
+.search {
+  display: flex;
+  justify-content: right;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+.srch input {
+  padding: 0.5rem;
+  border: 1px solid #680606;
+  border-radius: 12px;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #4d94ff; /* Blue button */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+main {
+  max-width: 950px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-top: 0;
+  color: #ff4d4d; /* Red headings */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4d94ff; /* Blue focus */
+  box-shadow: 0 0 5px rgba(77,148,255,0.5);
+  outline: none;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #4d94ff; /* Blue button */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #ff4d4d; /* Red on hover */
+  transform: scale(1.05);
+}
+
+.results {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: #d0f0ff; /* light blue background */
+  border: 1px solid #a0d8ff;
+}
+
+footer {
+  background: #4dff4d; /* Green footer */
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-weight: 600;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+canvas {
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* ===== Grid Form Styling ===== */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.grid-form .full-width {
+  grid-column: 1 / -1; /* span full row */
+}
+
+.full-width-btn {
+  width: 50%;
+  padding: 0.9rem;
+  font-size: 1rem;
+}
+
+
+/* ===== Video & Image Styles ===== */
+video, #capturedCanvas, #uploadImage {
+  width: 100%;
+  max-width: 250px;
+  height: 250px; /* square-ish image/video */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #333;
+  margin-bottom: 1rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+  main { padding: 1.5rem; }
+  h2 { font-size: 1.6rem; }
+  nav a { font-size: 1rem; }
+  video, #capturedCanvas, #uploadImage { height: 350px; }
+}
+
+@media (max-width: 200px) {
+  main { padding: 1.2rem; }
+  nav { gap: 1rem; }
+  video, #capturedCanvas, #uploadImage { height: 300px; }
+}
+
+@media (max-width: 768px) {
+  nav { flex-direction: column; gap: 0.8rem; }
+  header { font-size: 1.5rem; padding: 0.8rem; }
+  video, #capturedCanvas, #uploadImage { height: 250px; }
+  button { font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+  main { margin: 1rem; padding: 1rem; }
+  h2 { font-size: 1.3rem; }
+  input, textarea, select, button { font-size: 0.95rem; padding: 0.6rem; }
+  video, #capturedCanvas, #uploadImage { height: 200px; }
+}
+
+@media (max-width: 300px) {
+  nav a { font-size: 0.9rem; }
+  header { font-size: 1.2rem; }
+  video, #capturedCanvas, #uploadImage { height: 180px; }
+}
