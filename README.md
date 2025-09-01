@@ -1,4 +1,4 @@
-COMAND PROMPT FIVEN TO AI
+COMAND PROMPT FED TO AI
 
 I want you to help me design and implement a complete full-stack web application called "EMOTION SENSE”. The project should be AI-enabled Interactive, secure, and responsive. Help me develop this website and also a preview of it.
 Tech Stack
@@ -162,5 +162,6 @@ Automated AI Responses: A key feature where the backend, upon analyzing emotion,
 Database Schema: A structured MySQL database with tables for users, journal_entries, and comments to store all necessary data.
 
 Security Measures: Ensures a secure application by implementing input sanitization, rate limiting, and robust JWT token verification.
+
 
 
