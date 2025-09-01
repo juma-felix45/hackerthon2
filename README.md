@@ -1,3 +1,99 @@
+COMAND PROMPT FIVEN TO AI
+
+I want you to help me design and implement a complete full-stack web application called "EMOTION SENSE”. The project should be AI-enabled Interactive, secure, and responsive. Help me develop this website and also a preview of it.
+Tech Stack
+- Frontend: HTML5, CSS3, JavaScript (with Chart.js for mood trends, responsive design)
+- Backend: Python Flask (single file or modular with Blueprints for scalability)
+- Database: MySQL
+- AI: Hugging Face Sentiment Analysis API (text emotion analysis) + basic image emotion analysis (face/emotion recognition via AI model or API)
+- Security: JWT authentication, password hashing (Werkzeug), rate limiting, input sanitization
+- Deployment: Flask dev server locally; optionally Gunicorn + Nginx for production
+ Key Requirements
+1. User Authentication & Authorization
+   - Registration form (mandatory fields: name, age, location, phone number, ID number, marital status, email, password).
+   - Login/logout system.
+   - JWT-based authentication (sessions not allowed).
+   - Role-based access: normal users vs. admins.
+   - only allow one user with e-mail drjameskamau91@gmail.com
+   - Provide an option for a person who forgot an email to retrieve/reset the password 
+For the support, let an individual contact  
+2. Frontend
+   - `index.html` with:
+     - Login/register forms.
+     - Journal entry form (hidden until login).
+     - File upload for profile picture and emotion image capture (via webcam and upload).
+     - Comments section to describe the emotion end to be responded by AI (only logged-in users).
+     - About Us & Contact section.
+      -hungging face question 
+     - Admin-only panel link.
+   - Responsive, attractive design with background colors red, green, blue, yellow.
+   - Use `styles.css` for styling, `app.js` for logic (fetch API calls to Flask backend).
+   - Hide/show forms depending on authentication state.
+3. Backend (Flask in `app.py`)
+   - `/api/register` → Register new users.
+   - approval of registered users
+   - `/api/login` → Returns JWT token.
+   - `/api/entries` → Accepts journal entry + optional image, calls Hugging Face API for sentiment/emotion, stores result in DB.
+   - `/api/comments` → Allows logged-in users to leave comments.
+   - `/api/admin/users` → Admin-only route to view all users.
+only allow user with e-mail drjameskamau91@gmail.com to be admin
+provide a otp verification code number to an email/sms to the number registered to allow logging in
+   - Secure password storage (Werkzeug).
+   - Hugging Face API integration with bearer token.
+4. Automated AI Response (Key Feature)
+   - After emotion is detected (via text or image):
+     - The system should generate detailed automatic AI response providing recomendation based on the mood.
+     - Examples:
+       - Happy → “Keep sharing your positivity with others!”
+       - Sad → “We recommend reaching out to a counselor. Here’s a list of contacts.”
+       - Stressed → “Try breathing exercises or taking a walk. If persistent, consult a professional.”
+       - Angry → “Pause, reflect, and practice mindfulness. You may also reach out to a therapist.”
+   - AI responses should always be stored in Database along with the journal entry and displayed back to the user.
+   - Include hospital/counselor recommendations if emotions indicate need for professional help.
+5. Database Schema
+   - `users`: id, name, age, location, phone, id_number, marital_status, email, password_hash, role, created_at.
+   - `journal_entries`: id, user_id, text, image_path, emotion_result, ai_response, created_at.
+   - `comments`: id, user_id, comment, created_at.
+6. Security
+   - Input sanitization using `bleach`.
+   - JWT token verification middleware.
+   - File upload restrictions: only PNG/JPG/JPEG under 5MB.
+   - Rate limiting login attempts.
+   - Admin-only routes fully protected.
+7. Features
+   - Text emotion analysis via Hugging Face API.
+   - Image upload + optional webcam capture for emotions.
+   - Chart.js frontend visualization for mood trends.
+   - AI-generated recommendations automatically given after each analysis.
+   - Contact section + comment section for feedback.
+   - Admin can view users & moderate content.
+Admin can view and store the user passwords
+8. File Structure
+emotion_sense/
+├─ templates/
+│   └─ index.html
+├─ static/
+│   ├─ styles.css
+│   └─ app.js
+├─ uploads/
+├─ app.py
+├─ requirements.txt
+└─ schema.sql
+Deliverables
+- `index.html` → full frontend page with login, register, forms, webcam, and sections.
+- `styles.css` → responsive, modern styling with square image previews.
+- `app.js` → handles login/register/logout state, hides/shows forms, fetch calls to Flask backend, updates Chart.js visualizations.
+- `app.py` → secure Flask backend with routes, JWT, Hugging Face integration, MySQL connection, image handling, and automatic AI response generation.
+- `schema.sql` → database schema with users, journal_entries, comments (including `role` field for admins and `ai_response` for entries).
+- `requirements.txt` → dependencies list.
+- Instructions to run project locally:
+1. Install dependencies `pip install -r requirements.txt`
+2. Configure MySQL credentials in `app.py`
+3. Add Hugging Face API key in `app.py`
+4. Run with `python app.py`
+Your task: generate, refine, and improve the entire project step by step with all files included.
+
+
 Emotion Sense
 An AI-powered web application for real-time sentiment and emotion analysis of text and images. Emotion Sense allows users to record their emotional journey through journal entries and image uploads, receiving automated, helpful feedback from an AI.
 
@@ -66,4 +162,5 @@ Automated AI Responses: A key feature where the backend, upon analyzing emotion,
 Database Schema: A structured MySQL database with tables for users, journal_entries, and comments to store all necessary data.
 
 Security Measures: Ensures a secure application by implementing input sanitization, rate limiting, and robust JWT token verification.
+
 
